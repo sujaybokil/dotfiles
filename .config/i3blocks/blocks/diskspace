@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DISK="/dev/sda3"
+source ~/.config/i3/i3colors
+
+info=$(df -h --total $DISK | tail -n 1 | sed 's/ \+/ /g')
+available=$(echo $info | cut -d " " -f4)
+total=$(echo $info | cut -d " " -f2)
+
+i3block $yellow "" "$available/$total"

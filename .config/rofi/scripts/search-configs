@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+declare -A configs
+
+configs[alacritty]="$HOME/.config/alacritty/alacritty.yml"
+configs[rofi]="$HOME/.config/rofi"
+configs[i3]="$HOME/.config/i3/config"
+configs[i3blocks]="$HOME/.config/i3blocks/blocks"
+configs[dunst]="$HOME/.config/dunst/dunstrc"
+configs[zsh]="$HOME/.config/zsh"
+configs[picom]="$HOME/.config/picom/picom.conf"
+configs[neovim]="$HOME/.config/nvim"
+
+configlist=$(printf "%s " ${!configs[@]} | sed 's/ /\\n/g')
+selected_config=$(bash ~/.config/rofi/search_prompt  "$configlist" "Choose")
+echo $selected_config
+
+if [[ "$selected_config" == "" ]];then
+    exit 0
+fi
+
+path="${configs["${selected_config}"]}"
+alacritty -e sh -c "sleep 0.1; nvim $path"

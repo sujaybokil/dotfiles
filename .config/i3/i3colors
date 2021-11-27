@@ -1,0 +1,20 @@
+#!/bin/bash
+
+bgcolor="#282c34"
+gray="#abb2bf"
+white="#e5e7eb"
+red="#e06c75"
+darkred="#be5046"
+green="#98c379"
+yellow="#e5c07b"
+orange="#d19a66"
+blue="#61afef"
+darkblue="#437aa7"
+magenta="#c678dd"
+cyan="#56b6c2"
+darkgray="#494f59"
+
+function i3block () {
+    echo "<span background='$1' foreground='$bgcolor'> $2 </span><span background='$darkgray' foreground='$white'> $3 </span>"
+    return 0
+}

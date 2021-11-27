@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source ~/.config/i3/i3colors
+idle=$(mpstat 1 1 | tail -n 1 | sed 's/ \+/ /g' | cut -d ' ' -f12)
+intpart=$(echo $idle | cut -d "." -f1)
+frac=$(echo $idle | cut -d "." -f2 | cut -f1-2)
+
+if [[ $frac -gt 0 ]];then
+    intpart=$(( 99 - intpart ))
+    frac=$(( 100 - frac ))
+else
+    intpart=$(( 100 - intpart ))
+fi
+
+i3block $cyan "" "$intpart.$frac%"

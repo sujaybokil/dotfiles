@@ -1,0 +1,63 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+command=~/.config/i3blocks/blocks/$BLOCK_NAME
+separator_block_width=12
+markup=pango
+
+[volume]
+interval=once
+signal=1
+
+[updates]
+interval=3600
+signal=2
+
+[diskspace]
+interval=3600
+
+[cpu]
+interval=3
+
+[batteryinfo]
+interval=10
+
+# Date Time
+[date]
+interval=80000
+
+[time]
+interval=60
+
+[logout]
+interval=once
+
+# Generic media player support
+
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+

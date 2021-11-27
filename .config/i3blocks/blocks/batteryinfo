@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source ~/.config/i3/i3colors
+datetime=$(acpi | awk -F '[:,]' '{print $2, $3}')
+chargingstatus=$(echo $datetime | cut -d ' ' -f1)
+percent=$(echo $datetime | cut -d ' ' -f2 | sed 's/%//')
+
+color=$green
+if [[ $percent -ge 90 ]];then
+    icon=""
+elif [[ $percent -ge 75 ]];then
+    icon=""
+elif [[ $percent -ge 50 ]];then
+    icon=""
+elif [[ $percent -ge 25 ]];then
+    icon=""
+else
+    icon=""
+    color=$darkred
+fi
+
+if [[ $chargingstatus == "Discharging" ]];then
+    ind="ﮤ"
+else
+    ind="ﮣ"
+fi
+
+i3block $color "$icon" "$percent% $ind"

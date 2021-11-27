@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+theme="style-search"
+dir="$HOME/.config/rofi/styles"
+source ~/.config/i3/i3colors
+
+ALPHA="#00000000"
+BG="${bgcolor}ff"
+FG="${white}ff"
+SELECT="${darkgray}ff"
+ACCENT="${red}ff"
+
+cat > $dir/colors-search.rasi <<- EOF
+	/* colors */
+	* {
+	  al:  $ALPHA;
+	  bg:  $BG;
+	  se:  $SELECT;
+	  fg:  $FG;
+	  ac:  $ACCENT;
+	}
+EOF
+
+echo -e $1 | rofi -dmenu -i -p "$2 " -modi run,drun,window -no-lazy-grab -show drun -theme $dir/"$theme"

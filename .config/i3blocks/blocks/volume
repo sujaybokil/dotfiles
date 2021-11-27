@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source ~/.config/i3/i3colors
+volinfo=$(awk -F"[][]" '/Left:/ {print $2, $4}' <(amixer -D pulse sget Master | sed 's/%//'))
+vol=$(echo $volinfo | cut -d " " -f1)
+mute=$(echo $volinfo | cut -d " " -f2)
+
+if [[ $mute == "off" ]];then
+    icon="婢"
+elif [[ $vol -ge 70 ]];then
+    icon="墳"
+elif [[ vol -ge 30 ]];then
+    icon="奔"
+elif [[ vol -ge 10 ]];then
+    icon=" "
+fi
+
+i3block $red $icon "$vol%"
+case $BLOCK_BUTTON in
+    1) amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks;;
+    3) fix-mic && notify-send "Mic Enabled" "Bluetooth Mic connected successfully!!";;
+    *) ;;
+esac

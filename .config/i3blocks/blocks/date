@@ -1,0 +1,4 @@
+#!/bin/bash
+source ~/.config/i3/i3colors
+date=$(date "+%a, %b %d")
+i3block $orange "" "$date"

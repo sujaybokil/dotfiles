@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source ~/.config/i3/i3colors
+updates=$(apt list --upgradable | wc -l)
+i3block $blue "勒" "$(( $updates - 1))"
+
+if [[ $BLOCK_BUTTON == 1 ]];then
+    sudo apt update && sudo apt upgrade && pkill -RTMIN+2 i3blocks
+fi
