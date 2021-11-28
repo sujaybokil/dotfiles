@@ -22,7 +22,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-signify'
 
 " Greatest colorscheme known to man
-Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 
 " TJ will be proud
@@ -48,8 +47,11 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'terrortylor/nvim-comment'
 
-" Do u use i3?
+" Do u use i3? I do
 Plug 'mboughaba/i3config.vim'
+
+" Go full Netero (HunterxHunter)
+Plug 'folke/zen-mode.nvim'
 
 call plug#end()
 

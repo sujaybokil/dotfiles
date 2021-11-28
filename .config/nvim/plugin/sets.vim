@@ -1,3 +1,5 @@
+syntax enable
+filetype on
 set guicursor=
 set mouse=a
 set nu relativenumber
@@ -42,7 +44,6 @@ set shortmess+=c
 " i3 config syntax highlighting
 aug i3config_ft_detection
   au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
   au BufNewFile,BufRead * setlocal formatoptions-=ro
 aug end
 

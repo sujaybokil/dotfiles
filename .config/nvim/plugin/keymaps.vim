@@ -42,5 +42,6 @@ nnoremap <leader>cc :CommentToggle<CR>
 inoremap <S-Tab> <C-d>
 nnoremap <S-Tab> <<
 
-" Damn boii 
+" Some misc useful ones
 nnoremap <leader>cd :cd %:h<CR>
+nnoremap <leader>zz :ZenMode<CR>

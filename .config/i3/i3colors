@@ -15,6 +15,7 @@ cyan="#56b6c2"
 darkgray="#494f59"
 
 function i3block () {
-    echo "<span background='$1' foreground='$bgcolor'> $2 </span><span background='$darkgray' foreground='$white'> $3 </span>"
+    font=${4:-"Ubuntu Nerd Font 12"}
+    echo "<span background='$1' foreground='$bgcolor'> $2 </span><span background='$darkgray' foreground='$white' font='$font'> $3 </span>"
     return 0
 }

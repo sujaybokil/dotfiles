@@ -34,7 +34,6 @@ bindsym $mod+c exec --no-startup-id gnome-calculator
 bindsym $mod+x exec --no-startup-id "i3lock -i ~/.config/i3/lockscreen.png"
 bindsym $mod+p exec --no-startup-id "bash $HOME/.config/rofi/launcher"
 bindsym $mod+Shift+c exec --no-startup-id "bash $HOME/.config/rofi/scripts/search-configs"
-bindsym $mod+space exec --no-startup-id "bash $HOME/.config/rofi/scripts/i3layouts"
 
 # kill focused window
 bindsym $mod+w kill
@@ -64,7 +63,7 @@ bindsym $mod+m fullscreen toggle
 bindsym $mod+f floating toggle
 
 # toggle layouts
-bindsym $mod+d layout toggle all
+bindsym $mod+space layout toggle tabbed split
 
 # cycle focus
 bindsym $mod+Tab exec --no-startup-id i3-cycle-windows
@@ -81,7 +80,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $ws1 "1: 爵"
 set $ws2 "2:  "
 set $ws3 "3:  "
-set $ws4 "4:  "
+set $ws4 "4: 龎 "
 set $ws5 "5:  "
 set $ws6 "6:  "
 set $ws7 "7: "
