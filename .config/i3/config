@@ -1,3 +1,4 @@
+# vim: filetype=i3config
 # Global variables
 set $mod Mod4
 font pango:Ubuntu 12

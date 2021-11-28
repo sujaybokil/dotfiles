@@ -1,0 +1,7 @@
+[user]
+	name = sujaybokil
+	email = sujaybokil1@gmail.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = master
