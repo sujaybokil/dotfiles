@@ -45,3 +45,4 @@ nnoremap <S-Tab> <<
 " Some misc useful ones
 nnoremap <leader>cd :cd %:h<CR>
 nnoremap <leader>zz :ZenMode<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>

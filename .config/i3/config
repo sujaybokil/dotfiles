@@ -5,13 +5,14 @@ font pango:Ubuntu 12
 floating_modifier $mod
 
 # Startup modules
+exec --no-startup-id /usr/libexec/polkit-agent-helper-1
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id picom --experimental-backends --config $HOME/.config/picom/picom.conf
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 ## Keybindings ##
 
@@ -31,7 +32,7 @@ bindsym $mod+b exec --no-startup-id brave-browser --password-store=gnome
 bindsym $mod+s exec --no-startup-id spotify
 bindsym $mod+e exec --no-startup-id nautilus
 bindsym $mod+c exec --no-startup-id gnome-calculator
-bindsym $mod+x exec --no-startup-id "i3lock -i ~/.config/i3/lockscreen.png"
+bindsym $mod+x exec --no-startup-id "i3lock -i $HOME/.config/i3/lockscreen.png"
 bindsym $mod+p exec --no-startup-id "bash $HOME/.config/rofi/launcher"
 bindsym $mod+Shift+c exec --no-startup-id "bash $HOME/.config/rofi/scripts/search-configs"
 
@@ -63,7 +64,7 @@ bindsym $mod+m fullscreen toggle
 bindsym $mod+f floating toggle
 
 # toggle layouts
-bindsym $mod+space layout toggle tabbed split
+bindsym $mod+space exec --no-startup-id "bash $HOME/.config/rofi/scripts/i3layouts"
 
 # cycle focus
 bindsym $mod+Tab exec --no-startup-id i3-cycle-windows

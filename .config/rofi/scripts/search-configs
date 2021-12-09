@@ -12,7 +12,6 @@ configs[neovim]="$HOME/.config/nvim"
 
 configlist=$(printf "%s " ${!configs[@]} | sed 's/ /\\n/g')
 selected_config=$(bash ~/.config/rofi/search_prompt  "$configlist" "Choose")
-echo $selected_config
 
 if [[ "$selected_config" == "" ]];then
     exit 0

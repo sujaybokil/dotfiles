@@ -18,7 +18,7 @@ import i3ipc
 
 
 def get_windows_on_ws(conn):
-    return filter(lambda x: x.window, conn.get_tree().find_focused().workspace().descendents())
+    return filter(lambda x: x.window, conn.get_tree().find_focused().workspace().descendants())
 
 
 def find_visible_windows(windows_on_workspace):
