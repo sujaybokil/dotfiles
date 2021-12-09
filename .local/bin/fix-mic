@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+ofono-phonesim -p 12345 /usr/share/phonesim/default.xml &
+
+sleep 2 
+
+$HOME/addons/ofono/test/enable-modem and $HOME/addons/ofono/test/online-modem
+
+exit 0
