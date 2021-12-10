@@ -12,10 +12,12 @@ configs[neovim]="$HOME/.config/nvim"
 
 configlist=$(printf "%s " ${!configs[@]} | sed 's/ /\\n/g')
 selected_config=$(bash ~/.config/rofi/search_prompt  "$configlist" "Choose")
+path="${configs["${selected_config}"]}"
 
 if [[ "$selected_config" == "" ]];then
     exit 0
+elif [[ -d "$selected_config" ]];then
+    alacritty -e sh -c "sleep 0.1; nvim $path --cmd 'cd %'"
+else
+    alacritty -e sh -c "sleep 0.1; nvim $path --cmd 'cd %:h'"
 fi
-
-path="${configs["${selected_config}"]}"
-alacritty -e sh -c "sleep 0.1; nvim $path"

@@ -59,9 +59,3 @@ if [[ "$selected_layout" == "" ]];then
 fi
 
 i3-instant-layout $selected_layout
-
-
-
-
-
-
