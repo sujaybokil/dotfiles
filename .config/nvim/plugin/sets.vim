@@ -23,6 +23,7 @@ set ignorecase
 set clipboard+=unnamedplus
 set colorcolumn=80
 set completeopt=menu,menuone,noselect
+set cursorline
 
 " Dunno why but looked color
 set path+=**
