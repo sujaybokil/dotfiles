@@ -62,7 +62,7 @@ bindsym $mod+m fullscreen toggle
 bindsym $mod+f floating toggle
 
 # toggle layouts
-bindsym $mod+space exec --no-startup-id "bash $HOME/.config/rofi/scripts/i3-set-layout"
+bindsym $mod+space exec --no-startup-id "bash $HOME/.config/rofi/scripts/i3-layouts"
 
 # cycle focus
 bindsym $mod+Tab exec --no-startup-id i3-cycle-windows
@@ -202,7 +202,7 @@ client.urgent           $darkred        $darkred         $white         $darkred
 bar {
         position top
         font pango:Ubuntu Nerd Font 12
-        status_command sleep 2 && i3blocks
+        status_command i3blocks
         colors {
                 background $bgcolor
                 separator $bgcolor

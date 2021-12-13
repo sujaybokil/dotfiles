@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# bgcolor="#282828"
+# gray="#928374"
+# white="#fbf1c7"
+# red="#fb4934"
+# darkred="#cc241d"
+# green="#b8bb26"
+# yellow="#fabd2f"
+# orange="#fe8019"
+# blue="#458588"
+# darkblue="#076678"
+# magenta="#d3869b"
+# cyan="#8ec07c"
+# darkgray="#504945"
+
 bgcolor="#282c34"
 gray="#abb2bf"
 white="#e5e7eb"

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+layoutlist="Master Stack\nMonocle\nCentered Master\nFlipped Master Stack\nGrid (2x2)\nGrid (3x3)\nTabbed"
+selected_layout=$(bash ~/.config/rofi/search_prompt "$layoutlist" "Layout")
+
+case $selected_layout in
+
+    "Master Stack")
+        i3-instant-layout ml
+        ;;
+
+    "Monocle")
+        i3-instant-layout nr
+        ;;
+
+    "Centered Master")
+        i3-instant-layout mc 
+        ;;
+    
+    "Flipped Master Stack")
+        i3-instant-layout mr 
+        i3-msg ""
+        ;;
+
+    "Grid (2x2)")
+        i3-instant-layout 2r
+        ;;
+
+    "Grid (3x3)")
+        i3-instant-layout 3r
+        ;;
+
+    "Tabbed")
+        i3-instant-layout tabbed
+        ;;
+        
+    *)
+            
+        ;;
+esac
+
