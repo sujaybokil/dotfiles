@@ -2,6 +2,24 @@
 
 dir="$HOME/.config/rofi/styles"
 rofi_command="rofi -theme $dir/style-powermenu.rasi"
+source ~/.config/i3/i3colors
+
+ACCENT="$blue"
+
+cat > $dir/colors-powermenu.rasi <<- EOF
+
+	/* colors */
+* {
+  accent:           $ACCENT;
+  background:       #263238;
+  background-light: #293840;
+  foreground:       #E7E8EB;
+  on:               #44ad4d;
+  off:              #e34039;
+}
+
+EOF
+
 
 uptime=$(uptime -p | sed -e 's/up //g')
 cpu=$($HOME/.config/rofi/bin/usedcpu)

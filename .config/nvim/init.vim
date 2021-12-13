@@ -23,6 +23,7 @@ Plug 'mhinz/vim-signify'
 
 " Greatest colorscheme known to man
 Plug 'joshdick/onedark.vim'
+Plug 'gruvbox-community/gruvbox'
 
 " TJ will be proud
 Plug 'nvim-lua/popup.nvim'

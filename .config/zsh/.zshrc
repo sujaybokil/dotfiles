@@ -10,12 +10,12 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 
 # completions
-autoload -Uz compinit
-zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
 # compinit
+autoload -Uz compinit && compinit
+zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
+zstyle ':completion:*' menu select
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

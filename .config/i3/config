@@ -5,19 +5,18 @@ font pango:Ubuntu 12
 floating_modifier $mod
 
 # Startup modules
-exec --no-startup-id /usr/libexec/polkit-agent-helper-1
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id picom --experimental-backends --config $HOME/.config/picom/picom.conf
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ## Keybindings ##
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3blocks pkill -RTMIN+1 i3blocks
+set $refresh_i3blocks pkill -RTMIN+3 i3blocks
 
 # change volume or toggle mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
@@ -28,10 +27,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl set 3%-"
 
 # Apps
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+b exec --no-startup-id brave-browser --password-store=gnome
+bindsym $mod+b exec --no-startup-id brave --password-store=gnome
 bindsym $mod+s exec --no-startup-id spotify
 bindsym $mod+e exec --no-startup-id nautilus
-bindsym $mod+c exec --no-startup-id gnome-calculator
 bindsym $mod+x exec --no-startup-id "i3lock -i $HOME/.config/i3/lockscreen.png"
 bindsym $mod+p exec --no-startup-id "bash $HOME/.config/rofi/launcher"
 bindsym $mod+Shift+c exec --no-startup-id "bash $HOME/.config/rofi/scripts/search-configs"
@@ -204,7 +202,7 @@ client.urgent           $darkred        $darkred         $white         $darkred
 bar {
         position top
         font pango:Ubuntu Nerd Font 12
-        status_command i3blocks
+        status_command sleep 2 && i3blocks
         colors {
                 background $bgcolor
                 separator $bgcolor

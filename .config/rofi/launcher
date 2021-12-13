@@ -9,7 +9,6 @@ ALPHA="#00000000"
 BG="${bgcolor}ff"
 FG="${white}ff"
 SELECT="${darkgray}ff"
-
 ACCENT="${magenta}ff"
 
 cat > $dir/colors-launcher.rasi <<- EOF
