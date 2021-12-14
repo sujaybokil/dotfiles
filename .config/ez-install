@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+clear
+echo "--------------------------------------------------------------"
+echo "INSTALLING DEPENDENCIES ..."
+echo "--------------------------------------------------------------"
+sudo pacman -S --noconfirm yay git curl base-devel
+
+clear
+echo "--------------------------------------------------------------"
+echo "INSTALLING PACKAGES ..."
+echo "--------------------------------------------------------------"
+sudo pacman -S --noconfirm i3-gaps i3blocks python-i3ipc alacritty neovim sysstat dunst rofi zsh nitrogen lxappearance blueman xdotool yadm ripgrep fd brightnessctl
+yay -S --noconfirm picom-ibhagwan-git
+USRNAME=$(whoami)
+sudo usermod -aG video $USRNAME 
+pip3 install i3-instant-layout
+
+
+if [[ $(uname -a) == *"MANJARO"* ]];then
+    clear
+    echo "--------------------------------------------------------------"
+    echo "SETTING UP BLUETOOTH ..."
+    echo "--------------------------------------------------------------"
+    sudo pacman -S manjaro-pipewire
+fi
+
+clear
+echo "--------------------------------------------------------------"
+echo "INSTALLING MISC PROGRAMS ..."
+echo "--------------------------------------------------------------"
+bash -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+bash -c "$(curl https://raw.githubusercontent.com/anhsirk0/fetch-master-6000/master/install.sh)"
+
+bash -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+clear
+echo "--------------------------------------------------------------"
+echo "GETTING THE DOTS ..."
+echo "--------------------------------------------------------------"
+git config --global init.defaultBranch master
+yadm clone https://github.com/sujaybokil/dotfiles.git
+
+
+clear
+echo "--------------------------------------------------------------"
+echo "MAKING ZSH DEFAULT (Pls enter root password)..."
+echo "--------------------------------------------------------------"
+chsh -s $(which zsh)
+
+clear
+echo "--------------------------------------------------------------"
+echo "JOB DONE!! (Reboot to see changes) ..."
+echo "--------------------------------------------------------------"
