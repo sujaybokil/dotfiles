@@ -9,6 +9,7 @@ configs[dunst]="$HOME/.config/dunst/dunstrc"
 configs[zsh]="$HOME/.config/zsh/"
 configs[picom]="$HOME/.config/picom/picom.conf"
 configs[neovim]="$HOME/.config/nvim/"
+configs[lsd]="$HOME/.config/lsd/config.yaml"
 
 configlist=$(printf "%s " ${!configs[@]} | sed 's/ /\\n/g')
 selected_config=$(bash $HOME/.config/rofi/search_prompt "$configlist" "Choose")

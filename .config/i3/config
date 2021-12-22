@@ -25,9 +25,13 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl set +3%"
 bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl set 3%-"
 
+# One of my keyboards didnt have the XF86 brightness keys
+bindsym XF86Mail exec --no-startup-id "brightnessctl set +3%"
+bindsym XF86HomePage exec --no-startup-id "brightnessctl set 3%-"
+
 # Apps
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+b exec --no-startup-id brave --password-store=gnome
+bindsym $mod+b exec --no-startup-id brave-browser --password-store=gnome
 bindsym $mod+s exec --no-startup-id spotify
 bindsym $mod+e exec --no-startup-id nautilus
 bindsym $mod+x exec --no-startup-id "i3lock -i $HOME/.config/i3/lockscreen.png"
