@@ -55,4 +55,3 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 
 # Starship prompt
 eval "$(starship init zsh)"
-fm6000 -c random -r

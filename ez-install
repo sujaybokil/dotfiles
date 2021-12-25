@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+clear
+echo ""
+echo "Installing basic stuff ..."
+echo ""
+
+sudo apt install git apt-transport-https curl yadm tlp tlp-rdw ubuntu-restricted-extras 
+
+clear
+echo ""
+echo "Enabling firewall and battery saving ..."
+echo ""
+
+sudo systemctl enable tlp
+sudo ufw enable
+
+clear
+echo ""
+echo "Adding repositories ..."
+echo ""
+
+sudo add-apt-repository ppa:mmstick76/alacritty
+sudo add-apt-repository ppa:regolith-linux/unstable
+sudo add-apt-repository ppa:neovim-ppa/unstable
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo apt-get update
+
+clear
+echo ""
+echo "Installing all required packages ..."
+echo ""
+
+sudo apt install build-essential i3-gaps i3blocks alacritty neovim xclip dunst sysstat rofi zsh nitrogen lxappearance regolith-compositor-picom-glx xdotool python3-i3ipc brightnessctl playerctl nodejs exa paper-icon-theme python3-pip fd-find brave-browser spotify-client
+
+sudo npm install -g pyright
+
+sudo usermod -aG video cursed
+
+pip3 install pynvim i3-instant-layout
+
+clear
+echo ""
+echo "Installing some miscallenous stuff ... (JUST SAY YES)"
+echo ""
+
+bash -c "$(curl -fsSL https://starship.rs/install.sh)"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+clear
+echo ""
+echo "Getting the dots ... "
+echo ""
+
+git config --global user.name "sujaybokil"
+git config --global user.email sujaybokil1@gmail.com
+git config --global core.editor nvim
+git config --global init.defaultBranch master
+
+yadm clone https://github.com/sujaybokil/dotfiles.git
+
+clear
+echo ""
+echo "Changing default shell to ZSH ... (put password) "
+echo ""
+
+chsh -s $(which zsh)
+
+clear
+echo ""
+echo "Setting up bluetooth (Pipewire)"
+echo ""
+
+sudo apt install pipewire
+sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}} blueman
+
+clear
+echo ""
+echo "IT'S DONE BABY!!! RESTART TO SEE CHANGES"
+echo ""
+
+exit 0
+
+
+

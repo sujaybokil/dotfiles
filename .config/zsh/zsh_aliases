@@ -14,7 +14,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Some gen stuff
-alias ls='lsd -a'
+alias ls='exa -alh --color=auto'
 alias o='i3-swallow xdg-open'
+alias fd="fdfind"
 alias nb='jupyter retro'
 alias S='sudo'
