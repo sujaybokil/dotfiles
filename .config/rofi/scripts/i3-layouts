@@ -19,7 +19,7 @@ case $selected_layout in
     
     "Flipped Master Stack")
         i3-instant-layout mr 
-        i3-msg ""
+        i3-msg "resize set 50 ppt"
         ;;
 
     "Grid (2x2)")
