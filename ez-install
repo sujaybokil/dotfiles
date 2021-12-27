@@ -83,6 +83,16 @@ echo ""
 sudo apt install pipewire
 sudo apt install gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} libspa-0.2-{bluetooth,dev,jack,modules} pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}} blueman
 
+clear 
+echo ""
+echo "Installing Miniconda ..."
+cd 
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+bash Miniconda3-latest-Linux-x86_64.sh
+rm -rf Miniconda3-latest-Linux-x86_64.sh
+conda config --set auto_activate_base false
+conda config --set changeps1 false
+
 clear
 echo ""
 echo "IT'S DONE BABY!!! RESTART TO SEE CHANGES"

@@ -161,6 +161,7 @@ default_border pixel 2
 for_window [class="^.*"] border pixel 2
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="nm-connection-editor"] floating enable
 for_window [class="ssh-askpass"] floating enable
@@ -187,7 +188,6 @@ set $white #e5e7eb
 set $red #e06c75
 set $darkred #be5046
 set $green #98c379
-set $lightgreen #93cf98
 set $yellow #e5c07b
 set $orange #d19a66
 set $blue #61afef
@@ -215,7 +215,7 @@ bar {
                 statusline $red
 
                 # Name              border          background      text
-                focused_workspace   $bgcolor        $lightgreen     $bgcolor
+                focused_workspace   $bgcolor        $green     $bgcolor
                 inactive_workspace  $bgcolor        $darkgray       $white
                 urgent_workspace    $bgcolor        $red            $bgcolor
         }
