@@ -23,12 +23,13 @@ Plug 'mhinz/vim-signify'
 
 " Greatest colorscheme known to man
 Plug 'joshdick/onedark.vim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 " TJ will be proud
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " A slick statusbar and tabline
 Plug 'hoob3rt/lualine.nvim'

@@ -1,8 +1,8 @@
 /* colors */
 * {
   al:  #00000000;
-  bg:  #282c34ff;
-  se:  #494f59ff;
-  fg:  #e5e7ebff;
-  ac:  #e06c75ff;
+  bg:  #282828ff;
+  se:  #514944ff;
+  fg:  #fbf1c7ff;
+  ac:  #ea6962ff;
 }

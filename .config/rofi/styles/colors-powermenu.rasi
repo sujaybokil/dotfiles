@@ -1,7 +1,7 @@
 
 /* colors */
 * {
-  accent:           #61afef;
+  accent:           #7daea3;
   background:       #263238;
   background-light: #293840;
   foreground:       #E7E8EB;

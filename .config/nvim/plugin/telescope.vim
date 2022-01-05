@@ -1,9 +1,9 @@
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fs <cmd>Telescope file_browser<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>ft <cmd>Telescope help_tags<cr>
+nnoremap <leader>fs <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>
 
 lua << EOF
 require('telescope').setup({
@@ -28,5 +28,6 @@ require('telescope').setup({
             }
         }
 })
+require("telescope").load_extension "file_browser"
 EOF
 

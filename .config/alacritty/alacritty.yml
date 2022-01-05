@@ -11,7 +11,7 @@
 #import:
 #  - /path/to/alacritty.yml
 import:
-  - ~/.config/alacritty/themes/onedark.yml
+  - ~/.config/alacritty/themes/gruvbox_material.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -50,7 +50,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
    x: 6
-   y: 6
+   y: 10
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: true
